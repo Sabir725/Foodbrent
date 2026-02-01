@@ -1,0 +1,235 @@
+
+/* styles/ShopDetail.module.css */
+.container {
+    background-color: #121212;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.shopHeader {
+    position: relative;
+    height: 250px; 
+}
+
+.coverImage {
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.headerInfoContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+}
+
+.headerInfo h1 {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.headerInfo p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin: 0;
+}
+
+.shopMeta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.mainContent {
+    padding: 1.5rem;
+}
+
+.menuTabs {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #333;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+.menuTabs::-webkit-scrollbar {
+    display: none; 
+}
+
+.tabButton {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    background: none;
+    color: #ccc;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    font-size: 1rem;
+}
+
+.activeTab {
+    color: #dc2626;
+    border-bottom-color: #dc2626;
+    font-weight: bold;
+}
+
+.menuItems {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.productCard {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.productInfo {
+    flex-grow: 1;
+}
+
+.productInfo h4 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.vegNonVegIcon {
+    font-size: 1.5rem;
+}
+
+.productDesc {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.productPrice {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.productImageContainer {
+    position: relative;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.productImage {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.addButton, .quantityControl {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+
+.quantityControl {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100px;
+    justify-content: space-between;
+}
+
+.quantityControl button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.floatingCartBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #dc2626;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.viewCartButton {
+    background-color: #fff;
+    color: #dc2626;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .shopHeader {
+        height: 200px;
+    }
+
+    .headerInfoContainer {
+        padding: 1rem;
+    }
+
+    .headerInfo h1 {
+        font-size: 2rem;
+    }
+
+    .shopMeta {
+        font-size: 0.9rem;
+        gap: 0.8rem;
+    }
+
+    .mainContent {
+        padding: 1rem;
+    }
+
+    .productCard {
+        flex-direction: column;
+    }
+
+    .productImageContainer {
+        width: 100%;
+        padding-top: 56.25%;
+        margin-bottom: 2rem;
+    }
+
+    .productImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

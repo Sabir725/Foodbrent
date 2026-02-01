@@ -1,0 +1,92 @@
+
+/* styles/ConfirmationDialog.module.css */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dialog {
+    background-color: #2a2a2a;
+    color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.header h2 {
+    font-size: 2rem;
+    color: #dc2626;
+    margin: 0;
+}
+
+.details h3 {
+    font-size: 1.2rem;
+    color: #dc2626;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+}
+
+.detailItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.detailItem span:first-child {
+    color: #ccc;
+}
+
+.itemsList {
+    margin-top: 1.5rem;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #444;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.closeButton {
+    background-color: #dc2626;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+    background-color: #b91c1c;
+}

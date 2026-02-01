@@ -1,0 +1,244 @@
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #dc2626;
+}
+
+.nav a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #dc2626;
+}
+
+.ctaButton {
+    background-color: #dc2626;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: #b91c1c;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10rem 4rem;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: #fff;
+}
+
+.heroTitle {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.section {
+    padding: 8rem 4rem;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.sectionHeader h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 3rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cardImage {
+    height: 12rem;
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.whyChooseUs {
+    background-color: #f9f9f9;
+    padding: 8rem 4rem;
+}
+
+.featureCard {
+    text-align: center;
+    padding: 2rem;
+}
+
+.featureCard h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.howItWorks {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: #fff;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.testimonials {
+    padding: 8rem 4rem;
+}
+
+.testimonialCard {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.testimonialCard p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonialCard h4 {
+    font-weight: bold;
+    text-align: right;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 4rem;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footerSection h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footerSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerSection ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footerSection ul li a:hover {
+    color: #dc2626;
+}
+
+.socials a {
+    margin-right: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: #dc2626;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 2rem;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 6rem 2rem;
+    }
+
+    .heroTitle {
+        font-size: 3rem;
+    }
+
+    .section {
+        padding: 6rem 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding: 4rem 2rem;
+    }
+}

@@ -1,0 +1,49 @@
+
+/* components/layout/Header.module.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #dc2626; /* Changed from orange */
+    text-decoration: none;
+}
+
+.nav a {
+    margin: 0 1rem;
+    color: #ccc;
+    text-decoration: none;
+}
+
+.cartContainer {
+    position: relative;
+}
+
+.cartIcon {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+}
+
+.cartBadge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #dc2626; /* Changed from orange */
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}

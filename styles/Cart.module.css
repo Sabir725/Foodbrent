@@ -1,0 +1,171 @@
+
+/* styles/Cart.module.css */
+.container {
+    background-color: #121212;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.mainContent {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #dc2626; /* Red theme */
+}
+
+.emptyMessage {
+    font-size: 1.2rem;
+}
+
+.cartLayout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.orderTypeToggle {
+    display: flex;
+    margin-bottom: 1.5rem;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 0.5rem;
+}
+
+.toggleButton {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    background-color: transparent;
+    color: #ccc;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.toggleButton.active {
+    background-color: #dc2626; /* Red theme */
+    color: #fff;
+    font-weight: bold;
+}
+
+.takeawaySchedule, .dineInReservation {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.takeawaySchedule h3, .dineInReservation h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #dc2626; /* Red theme */
+}
+
+.scheduleInputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.scheduleInput {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.carPlateNote {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.cartItem {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.itemImage {
+    border-radius: 8px;
+}
+
+.itemDetails h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.quantityControl {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.quantityControl button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cartSummary {
+    background-color: #1e1e1e;
+    padding: 1.5rem;
+    border-radius: 8px;
+    position: sticky;
+    top: 100px;
+}
+
+.cartSummary h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.summaryLine {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.checkoutButton {
+    background-color: #dc2626; /* Red theme */
+    color: #fff;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .cartLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .scheduleInputs {
+        flex-direction: column;
+    }
+}
