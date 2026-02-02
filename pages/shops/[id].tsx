@@ -1,13 +1,13 @@
 
-import { useEffect, useMemo, useState } from 'react';
-import { useRouter } from 'next/router';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { useMemo, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '@/styles/ShopDetail.module.css';
 import { useCart, CartItem } from '@/context/CartContext';
 import Link from 'next/link';
 import CartIcon from '@/components/icons/CartIcon';
-import { getShopById, Shop, MenuItem } from '@/lib/data';
+import { getShops, getShopById, Shop, MenuItem } from '@/lib/data';
 
 // --- INTERFACES ---
 interface IconProps {
@@ -63,14 +63,37 @@ const ProductCard = ({ item, cartItem, serviceOption, onAddToCart, onIncrease, o
     );
 };
 
-const ShopDetail = () => {
-    const router = useRouter();
-    const { id } = router.query;
-    const [shop, setShop] = useState<Shop | null>(null);
-    const [activeTab, setActiveTab] = useState('');
+export const getStaticPaths: GetStaticPaths = async () => {
+    const shops = getShops();
+    const paths = shops.map((shop) => ({
+        params: { id: String(shop.id) },
+    }));
+
+    return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const id = params?.id;
+    const shopId = parseInt(id as string, 10);
+    const shop = getShopById(shopId);
+
+    if (!shop) {
+        return {
+            notFound: true,
+        };
+    }
+
+    return {
+        props: {
+            shop,
+        },
+    };
+};
+
+const ShopDetail = ({ shop }: { shop: Shop }) => {
+    const [activeTab, setActiveTab] = useState(Object.keys(shop.menu)[0] || '');
     const cartContext = useCart();
 
-    // Safely destructure cart context, providing defaults to prevent errors during initial render
     const {
         cart = [],
         handleAddToCart = () => {},
@@ -81,7 +104,6 @@ const ShopDetail = () => {
         setOrderType = () => {}
     } = cartContext || {};
 
-    // Moved useMemo to be called unconditionally at the top level
     const cartMap = useMemo(() => {
         return cart.reduce((map: { [key: string]: CartItem }, item) => {
             map[item.id] = item;
@@ -89,24 +111,6 @@ const ShopDetail = () => {
         }, {});
     }, [cart]);
 
-    useEffect(() => {
-        if (router.isReady) {
-            const shopId = parseInt(id as string, 10);
-            if (!isNaN(shopId)) {
-                const foundShop = getShopById(shopId);
-                if (foundShop) {
-                    setShop(foundShop);
-                    setActiveTab(Object.keys(foundShop.menu)[0] || '');
-                } else {
-                    router.push('/404');
-                }
-            } else {
-                router.push('/404');
-            }
-        }
-    }, [router.isReady, id, router]);
-
-    // Now, the loading state only depends on the shop data
     if (!shop) {
         return <div>Loading...</div>;
     }
@@ -201,7 +205,7 @@ const ShopDetail = () => {
 
             {cartSummary.totalItems > 0 && (
                 <div className={styles.floatingCartBar}>
-                    <span>{cartSummary.totalItems} items | ${cartSummary.totalPrice}</span>
+                    <span>{cartSummary.totalItems} items | ${cartSummary.totalPrice.toFixed(2)}</span>
                     <Link href="/cart" className={styles.viewCartButton}>View Cart</Link>
                 </div>
             )}
