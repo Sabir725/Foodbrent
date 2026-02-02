@@ -1,6 +1,7 @@
 
-// components/icons/OffersIcon.tsx
-const OffersIcon = ({ className }) => (
+import React from 'react';
+
+const OffersIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className={className}

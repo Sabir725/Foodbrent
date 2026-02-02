@@ -10,7 +10,26 @@ import FastDeliveryIcon from '../../components/icons/FastDeliveryIcon';
 import OffersIcon from '../../components/icons/OffersIcon';
 import VegIcon from '../../components/icons/VegIcon';
 
-const ShopCard = ({ shop }) => (
+// --- INTERFACES ---
+interface Shop {
+    id: number;
+    name: string;
+    image: string;
+    tags: string[];
+    rating: number;
+    reviews: string;
+    deliveryTime: string;
+    priceRange: string;
+    badges: string[];
+}
+
+interface FoodCategory {
+    name: string;
+    image: string;
+}
+
+// --- COMPONENTS ---
+const ShopCard = ({ shop }: { shop: Shop }) => (
     <Link href={`/shops/${shop.id}`} passHref>
         <div className={styles.card}>
             <div className={styles.imageContainer}>
@@ -47,7 +66,7 @@ const ShopCard = ({ shop }) => (
     </Link>
 );
 
-const FoodCategoryCard = ({ category }) => (
+const FoodCategoryCard = ({ category }: { category: FoodCategory }) => (
     <div className={styles.categoryCard}>
         <Image
             src={category.image}
@@ -61,11 +80,11 @@ const FoodCategoryCard = ({ category }) => (
 );
 
 const Shops = () => {
-    const shops = [
+    const shops: Shop[] = [
         {
             id: 1,
             name: 'Bento Box',
-            image: '',
+            image: 'https://picsum.photos/300/200?random=s1',
             tags: ['Japanese', 'Sushi', 'Asian'],
             rating: 4.8,
             reviews: '320+',
@@ -76,7 +95,7 @@ const Shops = () => {
         {
             id: 2,
             name: 'Taco Town',
-            image:"",
+            image: 'https://picsum.photos/300/200?random=s2',
             tags: ['Mexican', 'Tacos', 'Fast Food'],
             rating: 4.6,
             reviews: '500+',
@@ -87,7 +106,7 @@ const Shops = () => {
         {
             id: 3,
             name: 'Pasta Palace',
-            image:"",
+            image: 'https://picsum.photos/300/200?random=s3',
             tags: ['Italian', 'Pasta', 'European'],
             rating: 4.9,
             reviews: '700+',
@@ -97,11 +116,13 @@ const Shops = () => {
         },
     ];
 
-    const foodCategories = [
-      
-        { name: 'Chinese', image: "" },
-  
-  
+    const foodCategories: FoodCategory[] = [
+        { name: 'Indian', image: 'https://picsum.photos/80/80?random=c1' },
+        { name: 'Chinese', image: 'https://picsum.photos/80/80?random=c2' },
+        { name: 'Italian', image: 'https://picsum.photos/80/80?random=c3' },
+        { name: 'Mexican', image: 'https://picsum.photos/80/80?random=c4' },
+        { name: 'Japanese', image: 'https://picsum.photos/80/80?random=c5' },
+        { name: 'Desserts', image: 'https://picsum.photos/80/80?random=c6' },
     ];
 
     return (

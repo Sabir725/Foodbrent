@@ -1,6 +1,7 @@
 
-// components/icons/CuisineIcon.tsx
-const CuisineIcon = ({ className }) => (
+import React from 'react';
+
+const CuisineIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className={className}

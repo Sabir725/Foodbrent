@@ -19,7 +19,15 @@ const Header = () => (
   </header>
 );
 
-const ProductCard = ({ product }) => (
+interface Product {
+    id: number;
+    name: string;
+    description: string;
+    price: string;
+    image: string;
+}
+
+const ProductCard = ({ product }: { product: Product }) => (
     <div className={styles.card}>
         <Image src={product.image} alt={product.name} width={400} height={200} className={styles.cardImage} />
         <h3>{product.name}</h3>
@@ -34,7 +42,7 @@ const ProductCard = ({ product }) => (
 );
 
 const Products = () => {
-    const products = [
+    const products: Product[] = [
         {
             id: 1,
             name: 'Cheeseburger',

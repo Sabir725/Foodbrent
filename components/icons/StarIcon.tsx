@@ -1,6 +1,7 @@
 
-// components/icons/StarIcon.tsx
-const StarIcon = ({ className }) => (
+import React from 'react';
+
+const StarIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     className={className}
